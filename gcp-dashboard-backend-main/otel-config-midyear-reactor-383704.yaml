@@ -1,0 +1,29 @@
+receivers:
+  googlecloudmonitoring:
+    project_id: midyear-reactor-383704
+    metrics_list:
+      - metric_name: "compute.googleapis.com/instance/cpu/usage_time"
+      - metric_name: "connectors.googleapis.com/flex/instance/cpu/usage_time"
+
+processors:
+  resource:
+    attributes:
+      - key: service.name
+        value: midyear-reactor-383704-monitoring
+        action: insert
+      - key: service.instance.id
+        value: midyear-reactor-383704-host
+        action: insert
+
+exporters:
+  otlp:
+    endpoint: skywalking-oap:11800
+    tls:
+      insecure: true
+
+service:
+  pipelines:
+    metrics:
+      receivers: [googlecloudmonitoring]
+      processors: [resource]
+      exporters: [otlp]

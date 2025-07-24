@@ -1,0 +1,51 @@
+# Node dependencies
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime files
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# dotenv files (if you store secrets locally)
+.env
+.env.*
+
+# Build output
+dist/
+build/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE config
+.vscode/
+.idea/
+
+# Coverage reports
+coverage/
+
+# TypeScript build artifacts
+*.tsbuildinfo
+
+# Optional: If you're using Nodemon
+nodemon-debug.log
+
+# Optional: If you're using PM2
+.pm2/
+
+# Optional: local database files (if any)
+*.sqlite
+*.db
+
+# Optional: uploads/temp directories
+uploads/
+tmp/
