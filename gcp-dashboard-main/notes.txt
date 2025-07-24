@@ -1,0 +1,12 @@
+{
+  "roles": {
+    "cloud_admin": ["provision", "monitor", "audit", "configure"],
+    "devops_engineer": ["provision", "monitor", "configure", "trigger"],
+    "data_scientist": ["monitor", "configure"],
+    "security_officer": ["audit", "monitor"],
+    "project_manager": ["view_reports", "monitor"]
+  }
+}
+
+docker run -d --name skywalking-oap -p 11800:11800 -p 12800:12800 apache/skywalking-oap-server
+docker run -d --name skywalking-ui -p 8080:8080 --link skywalking-oap apache/skywalking-ui
